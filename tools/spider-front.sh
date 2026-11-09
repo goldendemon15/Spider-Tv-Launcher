@@ -16,7 +16,9 @@
 #
 #   It is still a focus bounce, not ownership:
 #     - needs this computer awake and connected (a dead adb session is retried);
-#     - a TV reboot or Wi-Fi drop ends the session and it reconnects;
+#     - a TV reboot or Wi-Fi drop ends the session; it reconnects when an adb
+#       endpoint exists again. This TV leaves wireless debugging off after a
+#       clean reboot, so the shim waits (quietly) until the toggle is back on;
 #     - each HOME press shows launcherx briefly before Spider comes back;
 #     - anything you open on launcherx is taken away within INTERVAL seconds,
 #       so the stock home is unusable while this runs.
